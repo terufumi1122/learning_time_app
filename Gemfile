@@ -51,9 +51,8 @@ group :development, :test do
   gem 'rails-controller-testing' # Rails5からはこれがないと`assigns`が使えないので必要
   gem 'factory_bot_rails'
   gem 'guard-rspec' # ファイルを上書きしたときに自動的にテストを実行
+  gem 'guard-rubocop' # ファイルを上書きしたときに自動的にテストを実行
   gem 'rubocop-rails', require: false
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :development do
@@ -64,6 +63,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rails-erd'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
