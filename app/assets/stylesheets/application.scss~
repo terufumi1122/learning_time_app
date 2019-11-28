@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap';
+
+// variables
+
+// color
+
+$main-bg-color: #15677D;
+$lighten-bg-color: lighten( $main-bg-color, 15%);
+$darken-bg-color: darken( $main-bg-color, 15%);
+
+$main-font-color: #eaeaea;
+$lighten-font-color: lighten( $main-font-color, 15%);
+$darken-font-color: darken( $main-font-color, 15%);
+
+.main-bg-color {
+  background: $main-bg-color;
+}
+.lighten-bg-color {
+  background: $lighten-bg-color;
+}
+.darken-bg-color {
+  background: $darken-bg-color;
+}
+
+.main-font-color {
+  color: $main-font-color;
+}
+
+.lighten-font-color {
+  color: $lighten-font-color;
+}
+
+.darken-font-color {
+  color: $darken-font-color;
+}

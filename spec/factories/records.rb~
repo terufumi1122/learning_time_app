@@ -1,0 +1,10 @@
+FactoryBot.define do
+  factory :record do
+    user_id { 1 }
+    start_time { "2019-11-27 22:32:19" }
+    stop_time { "2019-11-27 22:32:19" }
+    lap-time { 1 }
+    emotion { 1 }
+    description { "MyString" }
+  end
+end

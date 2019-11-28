@@ -1,0 +1,10 @@
+footer.footer
+  .navbar.navbar-expand-sm.navbar-dark.dark-bg-color
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        p copyright terufumi all rights reserve.
+    ul.navbar-nav
+      li.nav-item
+        = link_to 'About', '#', class: 'nav-link'
+      li.nav-item
+        = link_to 'Contact', '#', class: 'nav-link'

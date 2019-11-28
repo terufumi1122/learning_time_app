@@ -1,0 +1,6 @@
+.wrapper.main-bg-color
+  .container.text-center
+    .row
+      .col
+        h1.main-font-color Welcome to the World of Learning
+      p.main-font-color this is the best app for you!
