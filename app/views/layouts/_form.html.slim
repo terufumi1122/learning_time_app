@@ -1,15 +1,14 @@
-= form_with model: @user, url: '/signup' do |f|
-  = render 'shared/error_messages'
-  .form-group
+= form_with model: @user, url: '/signup', local: true do |f|
+  .form-group.d-flex.flex-column
     = f.label :name
     = f.text_field :name, class: 'form-controll'
-  .form-group.display-block
+  .form-group.d-flex.flex-column
     = f.label :email
     = f.email_field :email, class: 'form-controll'
-  .form-group
+  .form-group.d-flex.flex-column
     = f.label :password
     = f.password_field :password, class: 'form-controll'
-  .form-group
+  .form-group.d-flex.flex-column
     = f.label 'Confirm'
     = f.password_field :password_confirmation, class: 'form-controll'
   = f.submit 'Create my account', class: 'btn btn-warning'

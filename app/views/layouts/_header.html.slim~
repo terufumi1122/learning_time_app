@@ -2,12 +2,22 @@ header.header
   .navbar.navbar-expand-sm.navbar-light.lighten-bg-color
     ul.navbar-nav.mr-auto
       li.nav-item
-        = link_to 'Learning Time', , class: 'navbar-brand'
+        = link_to 'Learning Time', root_path, class: 'navbar-brand'
     ul.navbar-nav
       li.nav-item
         = link_to 'About', about_path, class: 'nav-link'
       li.nav-item
         = link_to 'Contact', contact_path, class: 'nav-link'
       li.nav-item
-        = link_to 'Log in', '#', class: 'nav-link'
+        = link_to 'Help', help_path, class: 'nav-link'
+      - if 
+        li.nav-item
+          = link_to 'Profile', '#', class: 'nav-link'
+        li.nav-item
+          = link_to 'Settings', '#', class: 'nav-link'
+        li.nav-item
+          = link_to 'Log out', logout_path, class: 'nav-link'
+      - else
+        li.nav-item
+          = link_to 'Log in', login_path, class: 'nav-link'
 

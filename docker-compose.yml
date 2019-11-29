@@ -20,6 +20,7 @@ services:
     links:
       - db
     tty: true
+    stdin_open: true
     depends_on:
       - db
 

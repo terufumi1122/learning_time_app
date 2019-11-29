@@ -1,11 +1,14 @@
 # == Route Map
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
+#                     login GET    /login(.:format)                                                                         sessions#new
+#                           POST   /login(.:format)                                                                         sessions#create
+#                    logout GET    /logout(.:format)                                                                        sessions#destroy
 #                    signup GET    /signup(.:format)                                                                        users#new
 #                           POST   /signup(.:format)                                                                        users#create
-#                     about GET    /about(.:format)                                                                         staticpages#about
-#                      help GET    /help(.:format)                                                                          staticpages#help
-#                   contact GET    /contact(.:format)                                                                       staticpages#contact
+#                     about GET    /about(.:format)                                                                         static_pages#about
+#                      help GET    /help(.:format)                                                                          static_pages#help
+#                   contact GET    /contact(.:format)                                                                       static_pages#contact
 #                     users GET    /users(.:format)                                                                         users#index
 #                           POST   /users(.:format)                                                                         users#create
 #                  new_user GET    /users/new(.:format)                                                                     users#new
@@ -22,6 +25,9 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/about', to: 'static_pages#about'

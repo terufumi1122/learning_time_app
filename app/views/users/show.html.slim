@@ -1,4 +1,10 @@
-h1 Users#show
-
-= @user.name
-= @user.email
+.container
+  .row
+    .col
+      ul
+        li
+          | Username :
+          = @user.name
+        li
+          | E-mail :
+          = @user.email

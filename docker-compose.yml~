@@ -4,7 +4,7 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSWL_DATABASE: root
+      MYSQL_DATABASE: root
     volumes:
       - db-data:/var/lib/mysql
     ports:

@@ -13,8 +13,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to @user, notice: 'Your account is perfectly registred!!'
     else
+      # binding.pry
       render 'new'
     end
   end

@@ -1,0 +1,13 @@
+.container.text-center
+  h1 Log in
+  .row
+    .col-6.offset-3
+      = form_with scope: :session, url: '/login', local: true do |f|
+        = render 'shared/error_messages'
+        .form-group.d-flex.flex-column
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group.d-flex.flex-column
+          = f.label :password
+          = f.password_field :password, class: 'form-controll'
+        = f.submit 'Log in', class: 'btn btn-warning'

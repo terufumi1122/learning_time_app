@@ -2,12 +2,30 @@ doctype html
 html
   head
     title
-      | AppName
+      = full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = render 'layouts/header'
+    = render 'shared/flash'
     = yield
     = render 'layouts/footer'
+  - if Rails.env.development?
+    .container.bg-light
+      h1 【開発環境用 デバッグ情報】
+      .row
+        .col-6
+        h2 debug(params)
+        = debug(params)
+        .col-6
+        h2 debug(flash)
+        = debug(flash)
+      .row
+        .col-6
+        h2 debug(@user)
+        = debug(@user)
+        .col-6
+        h2 debug(@current_user)
+        = debug(@current_user)
