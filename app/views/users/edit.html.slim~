@@ -2,6 +2,6 @@
   .container.text-center.main-font-color
     .row.d-flex.align-items-center
       .col-6.mx-auto
-        h2 Sign up
+        h2 Edit
         = render 'shared/error_messages'
          = render 'layouts/form'

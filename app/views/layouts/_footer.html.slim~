@@ -1,10 +1,10 @@
 footer.footer
-  .navbar.navbar-expand-sm.navbar-dark.dark-bg-color
-    ul.navbar-nav.mr-auto
+  .navbar.navbar-expand-sm.navbar-dark.darken-bg-color
+    ul.navbar-nav.mr-autor
       li.nav-item
         p copyright terufumi all rights reserve.
     ul.navbar-nav
       li.nav-item
-        = link_to 'About', '#', class: 'nav-link'
+        = link_to 'About', about_path, class: 'nav-link'
       li.nav-item
-        = link_to 'Contact', '#', class: 'nav-link'
+        = link_to 'Contact', contact_path, class: 'nav-link'

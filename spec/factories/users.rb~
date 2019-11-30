@@ -15,6 +15,6 @@ FactoryBot.define do
     name { "MyString" }
     email { "MyString@sample.com" }
     password { "MyString" }
-    password_confirmation { "MyString" }
+    password { "MyString" }
   end
 end

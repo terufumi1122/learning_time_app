@@ -7,7 +7,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body
+  body.main-bg-color.main-font-color
     = render 'layouts/header'
     = render 'shared/flash'
     = yield
@@ -17,15 +17,22 @@ html
       h1 【開発環境用 デバッグ情報】
       .row
         .col-6
-        h2 debug(params)
-        = debug(params)
+          h2 【params】
+          = debug(params)
         .col-6
-        h2 debug(flash)
-        = debug(flash)
+          h2 【flash】
+          = debug(flash)
       .row
         .col-6
-        h2 debug(@user)
-        = debug(@user)
+          h2 【@user】
+          = debug(@user)
         .col-6
-        h2 debug(@current_user)
-        = debug(@current_user)
+          h2 【@current_user】
+          = debug(@current_user)
+      .row
+        .col-6
+          h2 【user】
+          'hide' /= debug(user)
+        .col-6
+          h2 【current_user】
+          = debug(current_user)

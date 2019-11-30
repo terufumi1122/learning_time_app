@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
+  # skip_before_action :login_required
+
   def new
-    @user = User.new
   end
 
   def create
     @user = User.find_by(email: session_params[:email])
 
     if @user&.authenticate(session_params[:password])
-      # log_in user
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'You\'re logged in!!'
     else
-      flash.now[:danger] = 'ミスってまっせー'
+      flash.now[:notice] = 'Log in failed...'
       render 'new'
     end
   end

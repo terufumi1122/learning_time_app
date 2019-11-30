@@ -1,7 +1,7 @@
-- if @user.errors.present?
+- if @user&.errors.present?
   #error_explanation
     .alert.alert-danger
       p "The form contains #{pluralize(@user.errors.count, "error")}"
-      uln
+      ul
         - @user.errors.full_messages.each do |message|
           li = message

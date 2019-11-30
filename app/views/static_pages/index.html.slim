@@ -1,9 +1,19 @@
-.wrapper.main-bg-color
-  .container.text-center.main-font-color
-    .row
-      .col-8
-        h1 Welcome to the World of Learning
-        p this is the best app for you!
-      .col-4
-        h2 Sign up
-        = render 'layouts/form'
+.wrapper
+  .container.text-center
+    .row.d-flex.align-items-center
+      - if @current_user
+        .col-4
+          h2 Daily
+          h2 Weekly
+          h2 Monthly
+          h2 Grand
+        .col-8
+          = render 'layouts/btn'
+      - else
+        .col-4
+          h1 Welcome to the World of Learning
+          p this is the best app for you!
+          = link_to 'Log in', login_path, class: 'btn btn-primary btn-lg m-1'
+          = link_to 'Sign up', signup_path, class: 'btn btn-warning btn-lg m-1'
+        .col-8
+          = render 'layouts/btn'

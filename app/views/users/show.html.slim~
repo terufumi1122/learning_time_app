@@ -1,10 +1,18 @@
 .container
   .row
-    .col
-      ul
-        li
-          | Username :
-          = @user.name
-        li.list-item
-          | E-mail :
-          = @user.email
+    .col-6
+    .col-6.d-flex.flex-column
+      h1 Profile
+      .row
+        .col-6
+          h2.h5.text-secondary Username
+          p.h2 = @current_user.name
+        .col-6
+          h2.h5.text-secondary E-mail
+          p.h2 = @current_user.email
+      .row
+        .col-6
+        .col-3
+          = link_to 'Edit', edit_user_path, class: 'btn btn-primary'
+        .col-3
+          = link_to 'Delete', 'users/#{@current_user.id}', class: 'btn btn-danger', method: :delete

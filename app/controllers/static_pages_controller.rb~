@@ -1,11 +1,14 @@
 class StaticPagesController < ApplicationController
   def index
+    binding.pry
   end
 
   def about
   end
 
   def help
+  end
+
   def contact
   end
 end

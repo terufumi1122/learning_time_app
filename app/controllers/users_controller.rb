@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+
   def index
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -15,9 +15,24 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: 'Your account is perfectly registred!!'
     else
-      # binding.pry
       render 'new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update!(user_params)
+    redirect_to user_path(@current_user), notice: "Updated!"
+  end
+
+  def destroy
+    user = User.find(@current_user.id)
+    user.destroy
+    redirect_to root_url, notice: "Completely delete!!"
   end
 
   private
@@ -25,4 +40,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
 end

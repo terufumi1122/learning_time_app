@@ -10,9 +10,9 @@ header.header
         = link_to 'Contact', contact_path, class: 'nav-link'
       li.nav-item
         = link_to 'Help', help_path, class: 'nav-link'
-      - if 
+      - if current_user
         li.nav-item
-          = link_to 'Profile', '#', class: 'nav-link'
+          = link_to 'Profile', user_path(@current_user), class: 'nav-link'
         li.nav-item
           = link_to 'Settings', '#', class: 'nav-link'
         li.nav-item
