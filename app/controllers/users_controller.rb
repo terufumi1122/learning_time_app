@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'Your account is perfectly registred!!'
+      session[:user_id] = @user[:id]
+      redirect_to root_path, notice: 'Your account is perfectly registred!!'
     else
       render 'new'
     end

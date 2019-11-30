@@ -1,0 +1,9 @@
+h1 Total is...
+h2 Daily
+p = @daily_total
+h2 Weekly
+p = @weekly_total
+h2 Monthly
+p = @monthly_total
+h2 Grand Total
+p = @grand_total

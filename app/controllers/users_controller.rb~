@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
   end
 
   def new
@@ -14,7 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'Your account is perfectly registred!!'
+      session[:user_id] = @user[:id]
+      redirect_to , notice: 'Your account is perfectly registred!!'
     else
       render 'new'
     end

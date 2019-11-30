@@ -1,0 +1,21 @@
+class RecordController < ApplicationController
+
+  def new
+  end
+
+  def create
+    binding.pry
+    record = Record.new
+    record[:start_time] = Time.zone.now
+    record[:user_id] = @current_user[:id]
+    if record.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = 'Can\'t save record...'
+      render root_path
+    end
+  end
+
+  def update
+  end
+end

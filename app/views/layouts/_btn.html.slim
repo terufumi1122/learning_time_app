@@ -1,3 +1,13 @@
-h1 START/STOPボタンがRecordテーブルのstart_timeカラムがあるかないかによって切り替わる
-= link_to 'START', '#', class: 'btn btn-primary'
-
+- if @user_records.last
+  - if @user_records.last[:stop_time]
+    h1 Here we go!!
+    = link_to 'START', start_path, class: 'btn btn-primary btn-lg'
+    p.mt-3  Your last learning is
+    p.mt-3  = @user_records.last[:updated_at].strftime('%Y/%m/%d %T')
+  - else
+    h1 Click to stop learning.
+    = link_to 'STOP', stop_path, class: 'btn btn-danger btn-lg'
+    #area_time
+- else
+  h1 Let's Start Learning!!
+  = link_to 'START', start_path, class: 'btn btn-primary btn-lg'

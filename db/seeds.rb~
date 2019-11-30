@@ -13,7 +13,7 @@ User.create!(
   password_confirmation: 'password'
 )
 
-Record.create!(
+Record.create(
   start_time: '2019-11-30 06:56:37',
   stop_time: '2019-11-30 06:59:37',
   lap_time: 180,

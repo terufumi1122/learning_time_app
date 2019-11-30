@@ -13,7 +13,7 @@ html
     = yield
     = render 'layouts/footer'
   - if Rails.env.development?
-    .container.bg-light
+    .container.bg-light.text-dark
       h1 【開発環境用 デバッグ情報】
       .row
         .col-6
@@ -24,15 +24,17 @@ html
           = debug(flash)
       .row
         .col-6
+          h2 【@current_user】
+          = debug(@current_user)
+        .col-6
+          h2 【Record.last】
+          = debug(Record.last)
+      .row
+        .col-4
           h2 【@user】
           = debug(@user)
         .col-6
-          h2 【@current_user】
-          = debug(@current_user)
-      .row
-        .col-6
           h2 【user】
-          'hide' /= debug(user)
         .col-6
           h2 【current_user】
           = debug(current_user)

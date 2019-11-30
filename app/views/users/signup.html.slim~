@@ -10,8 +10,10 @@
         .col-8
           = render 'layouts/btn'
       - else
-        .col-8
+        .col-4
           h1 Welcome to the World of Learning
           p this is the best app for you!
           = link_to 'Log in', login_path, class: 'btn btn-primary btn-lg m-1'
           = link_to 'Sign up', signup_path, class: 'btn btn-warning btn-lg m-1'
+        .col-8
+          = render 'layouts/btn'
