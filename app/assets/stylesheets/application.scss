@@ -49,3 +49,8 @@ $darken-font-color: darken( $main-font-color, 15%);
 .darken-font-color {
   color: $darken-font-color;
 }
+
+#output {
+  font-size: 2.0rem;
+  letter-spacing: 0.5rem;
+}

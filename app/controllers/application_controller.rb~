@@ -18,9 +18,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    I18n.locale = current_user&.locale || :ja
-  end
+  # def set_locale
+  #   I18n.locale = current_user&.locale || :ja
+  # end
 
   def logged_in?
     !current_user.nil?

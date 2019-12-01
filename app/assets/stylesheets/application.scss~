@@ -20,7 +20,7 @@
 
 // color
 
-$main-bg-color: #15677D;
+$main-bg-color: teal;
 $lighten-bg-color: lighten( $main-bg-color, 30%);
 $darken-bg-color: darken( $main-bg-color, 15%);
 
@@ -48,4 +48,9 @@ $darken-font-color: darken( $main-font-color, 15%);
 
 .darken-font-color {
   color: $darken-font-color;
+}
+
+ {
+  font-size: 2.0rem;
+  letter-spacing: 0.5rem;
 }

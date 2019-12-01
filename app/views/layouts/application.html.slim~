@@ -3,6 +3,7 @@ html
   head
     title
       = full_title(yield(:title))
+    = 
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -13,4 +14,3 @@ html
     = yield
     = render 'layouts/footer'
     = render 'layouts/debug'
-
