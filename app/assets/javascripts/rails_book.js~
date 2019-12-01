@@ -1,0 +1,11 @@
+document.addEventListener('turbolinks:load', function() {
+  document.querySelectorAll('h1').forEach(function(h1) {
+    h1.addEventListener('mouseover', function(e) {
+      e.currentTarget.style.backgroundColor = '#aaa';
+    });
+
+    h1.addEventListener('mouseout', function(e) {
+      e.currentTarget.style.backgroundColor = '';
+    });
+  });
+});

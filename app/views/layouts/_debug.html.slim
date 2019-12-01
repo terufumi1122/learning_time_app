@@ -1,0 +1,27 @@
+- if Rails.env.development?
+  .container.bg-light.text-dark
+    h1 【開発環境用 デバッグ情報】
+    .row
+      .col-6
+        h2 【params】
+        = debug(params)
+      .col-6
+        h2 【flash】
+        = debug(flash)
+    .row
+      .col-6
+        h2 【@current_user】
+        = debug(@current_user)
+      .col-6
+        h2 【Record.last】
+        = debug(Record.last)
+    .row
+      .col-4
+        h2 【@user】
+        = debug(@user)
+    .row
+      .col-6
+        h2 【user】
+      .col-6
+        h2 【current_user】
+        = debug(current_user)

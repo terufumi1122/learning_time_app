@@ -8,6 +8,7 @@
     h1 Click to stop learning.
     = link_to 'STOP', stop_path, class: 'btn btn-danger btn-lg'
     #area_time
+    = render 'layouts/timer'  
 - else
   h1 Let's Start Learning!!
   = link_to 'START', start_path, class: 'btn btn-primary btn-lg'
