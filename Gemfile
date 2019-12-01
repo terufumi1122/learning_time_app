@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap' # CSSフレームワーク
 gem 'html2slim' # htmlをslimに変更
 gem 'slim-rails' # erbでなくslimを使用
+gem 'data-confirm-modal'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

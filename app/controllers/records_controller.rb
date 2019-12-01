@@ -20,6 +20,9 @@ class RecordsController < ApplicationController
     record = Record.last
     record[:stop_time] = Time.zone.now
     record[:lap_time] = record[:stop_time] - record[:start_time]
+    if params[:emotion]
+      record[:emotion] = params[:emotion]
+    end
     if record.save
       redirect_to root_path
     else

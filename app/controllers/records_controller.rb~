@@ -20,6 +20,10 @@ class RecordsController < ApplicationController
     record = Record.last
     record[:stop_time] = Time.zone.now
     record[:lap_time] = record[:stop_time] - record[:start_time]
+    if params[:emotion]
+      record[:emotion] = params[:emotion]
+    else
+    end
     if record.save
       redirect_to root_path
     else
@@ -27,11 +31,4 @@ class RecordsController < ApplicationController
       render root_path
     end
   end
-  @today = Date.today
-  @user_records = Record.find_by(user_id: @current_user[:id])
-
-  @daily_total = @user_records.where(created_at: @today.all_day).sum(:lap_time) /60
-  @weekly_total = @user_records.where(created_at: @today.all_week).sum(:lap_time) /60
-  @monthly_total = @user_records.where(created_at: @today.all_month).sum(:lap_time) /60
-  @grand_total = @user_records.sum(:lap_time) / 60
 end

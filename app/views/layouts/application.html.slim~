@@ -4,6 +4,7 @@ html
     title
       = full_title(yield(:title))
     = csrf_meta_tags
+    = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body.main-bg-color.main-font-color
@@ -20,5 +21,3 @@ html
           alert("いいに！");
       }
 
-    /= javascript_include_tag 'application'
-    /= javascript_include_tag 'iini'
