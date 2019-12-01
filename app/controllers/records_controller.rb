@@ -23,6 +23,9 @@ class RecordsController < ApplicationController
     if params[:emotion]
       record[:emotion] = params[:emotion]
     end
+    if params[:description]
+      record[:description] = params[:description]
+    end
     if record.save
       redirect_to root_path
     else

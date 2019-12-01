@@ -17,12 +17,15 @@ class RecordsController < ApplicationController
   end
 
   def update
+    binding.pry
     record = Record.last
     record[:stop_time] = Time.zone.now
     record[:lap_time] = record[:stop_time] - record[:start_time]
     if params[:emotion]
       record[:emotion] = params[:emotion]
-    else
+    end
+    if params[:description]
+      record[:description] = params[:description]
     end
     if record.save
       redirect_to root_path

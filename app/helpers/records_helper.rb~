@@ -1,10 +1,6 @@
 module RecordsHelper
 
-  @today = Date.today
-  @user_records = Record.find_by(user_id: @current_user[:id])
+  @description_dialog = { confirm: "Write now your learning description!", verify: :description, verify_text: "いいにな", cancel: "Cancel", commit: "OK", title: "Write description"
+  }
 
-  @daily_total = @user_records.where(created_at: @today.all_day).sum(:lap_time) /60
-  @weekly_total = @user_records.where(created_at: @today.all_week).sum(:lap_time) /60
-  @monthly_total = @user_records.where(created_at: @today.all_month).sum(:lap_time) /60
-  @grand_total = @user_records.sum(:lap_time) / 60
 end

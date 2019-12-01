@@ -5,13 +5,14 @@
     p.mt-3  Your last learning is
     p.mt-3  = @user_records.last[:updated_at].strftime('%Y/%m/%d %T')
   - else
-    h1 Click to stop is just stop learning.
+    h1 Click to stop-button is just stop learning.
     = link_to 'STOP', stop_path, class: 'btn btn-danger btn-lg mr-1'
     h3 If you want to add emotion, then click byn below.
-    = link_to '1', stop_path(emotion: 1), class: 'btn btn-danger btn-lg mr-1'
+    = link_to '1', stop_path(emotion: 1), 
     = link_to '2', stop_path(emotion: 2), class: 'btn btn-warning btn-lg mr-1'
     = link_to '3', stop_path(emotion: 3), class: 'btn btn-info btn-lg mr-1'
     = link_to '4', stop_path(emotion: 4), class: 'btn btn-primary btn-lg'
+    = render 'layouts/dialog'
     #area_time
     = render 'layouts/timer'  
 - else
