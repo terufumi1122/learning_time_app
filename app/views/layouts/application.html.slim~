@@ -11,13 +11,6 @@ html
     = render 'layouts/header'
     = render 'shared/flash'
     = yield
-    input type='button' value='iini' onclick='iini()'
-    input type='button' value='iini2' onclick='iini2()'
     = render 'layouts/footer'
     = render 'layouts/debug'
-
-    javascript:
-      function iini() {
-          alert("いいに！");
-      }
 
