@@ -8,6 +8,5 @@ document.addEventListener('turbolinks:load', function() {
     let current_time = (hour + ":" + min + ":" + sec);
 
     document.getElementById("current_time").innerHTML = current_time;
-    alert(gon.current_user.name);
 
 });

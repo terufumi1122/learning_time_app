@@ -1,7 +1,8 @@
 class RecordsController < ApplicationController
 
   def new
-
+    record = Record.last
+    gon.last_start_time = record.start_time.to_f * 1000
   end
 
   def create

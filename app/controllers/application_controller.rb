@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def all_hour
+    biggining_of_hour..end_of_hour
+  end
+
   private
 
   # def set_locale
