@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-4
+      = render 'records/chart_hours'
+    .col-4
+      = render 'records/chart_days'
+    .col-4
+      = render 'records/chart_weeks'
+    h1 records#show
+    p @last_7_days_record
+    p = @last_7_days_record
+    p @last_4_weeks_record
+    p = @last_4_weeks_record

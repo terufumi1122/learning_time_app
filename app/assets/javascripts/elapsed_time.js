@@ -5,7 +5,7 @@ document.addEventListener('turbolinks:load', function() {
         let output = document.getElementById("output");
 
         let getElapsedTime = function() {
-            let d = new Date(gon.last_start_time);
+            let d = gon.last_start_time;
             let dNow = new Date();
             let dElapsed = dNow - d;
             let h = Math.floor(dElapsed / 1000 / 60 / 60);

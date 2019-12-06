@@ -82,3 +82,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
 gem 'data-confirm-modal'
+gem 'gon'

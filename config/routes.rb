@@ -3,6 +3,8 @@
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                     start GET    /start(.:format)                                                                         records#create
 #                      stop GET    /stop(.:format)                                                                          records#update
+#                   records GET    /records(.:format)                                                                       records#show
+#                      line POST   /line(.:format)                                                                          records#line_notify_send
 #                     login GET    /login(.:format)                                                                         sessions#new
 #                           POST   /login(.:format)                                                                         sessions#create
 #                    logout GET    /logout(.:format)                                                                        sessions#destroy
@@ -29,6 +31,8 @@
 Rails.application.routes.draw do
   get '/start', to: 'records#create'
   get '/stop', to: 'records#update'
+  get '/records', to: 'records#show'
+  post '/line', to: 'records#line_notify_send'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

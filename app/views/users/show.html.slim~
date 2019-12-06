@@ -12,7 +12,8 @@
           p.h2 = @current_user.email
       .row
         .col-6
-        .col-3
+        .col-3.ml-auto
           = link_to 'Edit', edit_user_path, class: 'btn btn-primary'
-        .col-3
+          = link_to 'Line Notify Token', line_path, class: 'btn btn-primary'
+        .col-3.ml-auto
           = link_to 'Delete', 'users/#{@current_user.id}', class: 'btn btn-danger', method: :delete

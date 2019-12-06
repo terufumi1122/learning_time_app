@@ -1,0 +1,6 @@
+h1 LineNotifyToken
+= form_with model: @user, local: true do |f|
+  .form-group.d-flex.flex-column
+    = f.label 'Line Notify Token'
+    = f.text_field :line_notify_token, class: 'form-controll'
+  = f.submit 'Submit', class: 'btn btn-'

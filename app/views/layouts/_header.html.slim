@@ -12,6 +12,8 @@ header.header
         = link_to 'Help', help_path, class: 'nav-link'
       - if @current_user
         li.nav-item
+          = link_to 'Records', records_path, class: 'nav-link'
+        li.nav-item
           = link_to 'Profile', user_path(@current_user), class: 'nav-link'
         li.nav-item
           = link_to 'Settings', '#', class: 'nav-link'

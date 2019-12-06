@@ -127,6 +127,7 @@ GEM
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
+    httpclient (2.8.3)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -338,6 +339,7 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   html2slim
+  httpclient
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

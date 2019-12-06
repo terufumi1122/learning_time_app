@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RecordsController, type: :controller do
+RSpec.describe RecordController, type: :controller do
 
   describe "http_status" do
     describe "GET #new" do

@@ -1,0 +1,59 @@
+h1 chart_days
+
+p = (@today - 1).strftime('%m/%d')
+p = (@today - 2).strftime('%m/%d')
+p = (@today - 3).strftime('%m/%d')
+p = (@today - 4).strftime('%m/%d')
+p = (@today - 5).strftime('%m/%d')
+p = (@today - 6).strftime('%m/%d')
+p = (@today - 7).strftime('%m/%d')
+
+
+canvas#chartDays width="400" height="400"
+javascript:
+  var today = new Date;
+  var ctx = document.getElementById('chartDays').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+                today,
+                (today - 1)',
+                (today - 2)',
+                (today - 3)',
+                (today - 4',
+                (today - 5),
+                (today - 6)
+                ]
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 1.0)',
+                  'rgba(54, 162, 235, 1.0)',
+                  'rgba(255, 206, 86, 1.0)',
+                  'rgba(75, 192, 192, 1.0)',
+                  'rgba(153, 102, 255, 1.0)',
+                  'rgba(255, 159, 64, 1.0)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });

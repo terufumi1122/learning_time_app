@@ -3,7 +3,6 @@ header.header
     ul.navbar-nav.mr-auto
       li.nav-item
         = link_to 'Learning Time', root_path, class: 'navbar-brand'
-        = render 'layouts/current_time', class: 'navbar-text'
     ul.navbar-nav
       li.nav-item
         = link_to 'About', about_path, class: 'nav-link'
@@ -12,6 +11,8 @@ header.header
       li.nav-item
         = link_to 'Help', help_path, class: 'nav-link'
       - if @current_user
+        li.nav-item
+          = link_to 'Records', _records_path, class: 'nav-link'
         li.nav-item
           = link_to 'Profile', user_path(@current_user), class: 'nav-link'
         li.nav-item

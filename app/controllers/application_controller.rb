@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
       @daily_total = @user_records.where(created_at: @today.all_day).sum(:lap_time) /60
       @weekly_total = @user_records.where(created_at: @today.all_week).sum(:lap_time) /60
+
       @monthly_total = @user_records.where(created_at: @today.all_month).sum(:lap_time) /60
       @grand_total = @user_records.sum(:lap_time) / 60
 

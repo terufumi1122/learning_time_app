@@ -2,6 +2,8 @@
   - if @user_records.last[:stop_time]
     h1 Here we go!!
     = link_to 'START', start_path, class: 'btn btn-primary btn-lg'
+    h2 Send to your record for your Line account.
+    = link_to 'Send to Line', line_path, method: :post, class: 'btn btn-success btn-lg'
     p.mt-3  Your last learning is
     p.mt-3  = @user_records.last[:updated_at].strftime('%Y/%m/%d %T')
     = render 'layouts/chart'
