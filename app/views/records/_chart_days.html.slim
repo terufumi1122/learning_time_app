@@ -1,33 +1,31 @@
 h1 chart_days
 
-p = (@today - 1).strftime('%m/%d')
-p = (@today - 2).strftime('%m/%d')
-p = (@today - 3).strftime('%m/%d')
-p = (@today - 4).strftime('%m/%d')
-p = (@today - 5).strftime('%m/%d')
-p = (@today - 6).strftime('%m/%d')
-p = (@today - 7).strftime('%m/%d')
-
-
 canvas#chartDays width="400" height="400"
 javascript:
-  var today = new Date;
   var ctx = document.getElementById('chartDays').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [
-                today,
-                (today - 1),
-                (today - 2),
-                (today - 3),
-                (today - 4),
-                (today - 5),
-                (today - 6)
-                ]
+          labels: [
+                moment().add(-7, 'days').format('MM/DD'),
+                moment().add(-6, 'days').format('MM/DD'),
+                moment().add(-5, 'days').format('MM/DD'),
+                moment().add(-4, 'days').format('MM/DD'),
+                moment().add(-3, 'days').format('MM/DD'),
+                moment().add(-2, 'days').format('MM/DD'),
+                moment().add(-1, 'days').format('MM/DD')
+                ],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [
+                gon.learning_time_of_7days_ago,
+                gon.learning_time_of_6days_ago,
+                gon.learning_time_of_5days_ago,
+                gon.learning_time_of_4days_ago,
+                gon.learning_time_of_3days_ago,
+                gon.learning_time_of_2days_ago,
+                gon.learning_time_of_yesterday
+              ],
               backgroundColor: [
                   'rgba(255, 99, 132, 1.0)',
                   'rgba(54, 162, 235, 1.0)',

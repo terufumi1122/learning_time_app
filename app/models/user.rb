@@ -2,17 +2,20 @@
 #
 # Table name: users
 #
-#  id                :bigint           not null, primary key
-#  email             :string(255)      not null
-#  line_notify_token :string(255)
-#  name              :string(32)       not null
-#  password_digest   :string(255)      not null
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                             :bigint           not null, primary key
+#  email                          :string(255)      not null
+#  encrypted_line_notify_token    :string(255)
+#  encrypted_line_notify_token_iv :string(255)
+#  name                           :string(32)       not null
+#  password_digest                :string(255)      not null
+#  created_at                     :datetime         not null
+#  updated_at                     :datetime         not null
 #
 
 class User < ApplicationRecord
   has_many :records
+
+  attr_encrypted :line_notify_token, key: 'This is a key that is 256 bits!!'
 
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 32 }

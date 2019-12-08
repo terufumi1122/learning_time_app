@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_104610) do
+ActiveRecord::Schema.define(version: 2019_12_07_071336) do
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "start_time", null: false
@@ -30,7 +30,8 @@ ActiveRecord::Schema.define(version: 2019_12_05_104610) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "line_notify_token"
+    t.string "encrypted_line_notify_token"
+    t.string "encrypted_line_notify_token_iv"
   end
 
   add_foreign_key "records", "users"

@@ -1,31 +1,24 @@
-h1 chart_hours
+h1 chart_weeks
 
-canvas#chartHours width="400" height="400"
+canvas#chartWeeks width="400" height="400"
 javascript:
-  var ctx = document.getElementById('chartHours').getContext('2d');
+  var ctx = document.getElementById('chartWeeks').getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
           labels: [
-              moment().add(-8, 'hours').format('h:mm'),
-              moment().add(-7, 'hours').format('h:mm'),
-              moment().add(-6, 'hours').format('h:mm'),
-              moment().add(-5, 'hours').format('h:mm'),
-              moment().add(-4, 'hours').format('h:mm'),
-              moment().add(-3, 'hours').format('h:mm'),
-              moment().add(-2, 'hours').format('h:mm'),
-              moment().add(-1, 'hours').format('h:mm')
+              moment().add(-4, 'weeks').format('MM/DD'),
+              moment().add(-3, 'weeks').format('MM/DD'),
+              moment().add(-2, 'weeks').format('MM/DD'),
+              moment().add(-1, 'weeks').format('MM/DD'),
           ],
           datasets: [{
               label: '# of Votes',
               data: [
-                gon.learning_time_of_7hours_ago,
-                gon.learning_time_of_6hours_ago,
-                gon.learning_time_of_5hours_ago,
-                gon.learning_time_of_4hours_ago,
-                gon.learning_time_of_3hours_ago,
-                gon.learning_time_of_2hours_ago,
-                gon.learning_time_of_1hour_ago
+                gon.learning_time_of_4weeks_ago,
+                gon.learning_time_of_3weeks_ago,
+                gon.learning_time_of_2weeks_ago,
+                gon.learning_time_of_week
                 ],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',

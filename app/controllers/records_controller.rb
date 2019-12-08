@@ -43,7 +43,7 @@ class RecordsController < ApplicationController
   end
 
   def line_notify_send
-    if @current_user[:line_notify_token]
+    if @current_user.line_notify_token
       msg = <<~EOS
       #{@today.strftime('%Y-%m-%d')}
       Daily total:#{@daily_total}min.
@@ -53,7 +53,7 @@ class RecordsController < ApplicationController
       EOS
 
       url = 'https://notify-api.line.me/api/notify'
-      token = (@current_user[:line_notify_token])
+      token = (@current_user.line_notify_token)
       # httpclientを使ってリクエストの雛形を作成する
       client = HTTPClient.new
       # URIを指定

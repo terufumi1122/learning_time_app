@@ -25,7 +25,7 @@ javascript:
                 gon.learning_time_of_4hours_ago,
                 gon.learning_time_of_3hours_ago,
                 gon.learning_time_of_2hours_ago,
-                gon.learning_time_of_1hour_ago
+                gon.learning_time_of_1hour_ago,
                 ],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
